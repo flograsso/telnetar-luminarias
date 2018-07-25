@@ -34,12 +34,22 @@ $live=$data["live"];
 $timestamps=$data["timestamp"];
 
 
-echo $data["deveui"];
+echo $deveui;
+echo $dataFrame;
+echo $port;
+echo $fcnt;
+echo $rssi;
+echo $snr;
+echo $sf_used;
+echo $id;
+echo $decrypted;
+echo $live;
+echo $timestamps;
 
 
-$sql="INSERT INTO `orbiwise` (crudo,deveui,payload,port,fcnt,rssi,snr,sf_used,payload_id,decrypted,live,timestamp) VALUES ('$crudo','$deveui','$payload','$port','$fcnt','$rssi','$snr','$sf_used','$payload_id','$decrypted','$live','$timestamp');";
+//$sql="INSERT INTO `orbiwise` (crudo,deveui,payload,port,fcnt,rssi,snr,sf_used,payload_id,decrypted,live,timestamp) VALUES ('$crudo','$deveui','$payload','$port','$fcnt','$rssi','$snr','$sf_used','$payload_id','$decrypted','$live','$timestamp');";
 
-$conn->query($sql);
+//$conn->query($sql);
 
 
 
