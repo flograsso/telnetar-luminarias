@@ -30,7 +30,8 @@ $snr=$data["snr"];
 $sf_used=$data["sf_used"];
 $id=$data["id"];
 
-$decrypted=$data["decrypted"];
+$decrypted=$data["decrypted"] ."<br>";
+echo $decrypted ."<br>";
 $live=$data["live"];
 $timestamps=$data["timestamp"];
 
