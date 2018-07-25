@@ -31,6 +31,7 @@ if( isset($data["dataFrame"])) //Receive Uplink Payload Callback
     $id=$data["id"];
     $live=$data["live"];
     $timestamp=$data["timestamp"];
+    $decrypted=$data["decrypted"];
 
     if ($decrypted == NULL)
         $decrypted="0";
