@@ -55,7 +55,14 @@ elseif( isset($data["transmissionStatus"])) //Downlink Payload Status Callback
     $sql="INSERT INTO `orbiwise_downlink` (deveui,data,id,fcnt,port,transmissionStatus) VALUES ('$deveui','$dataDown','$id','$fcnt','$port','$transmissionStatus');";
     $conn->query($sql);
 }
+else
+{
 
+    $sql="INSERT INTO `orbiwise_others` (data) VALUES ('$data');";
+    $conn->query($sql);
+}
+
+/*
 elseif( isset($data["registration_status"])) //Node Info Update Callback
 {
 
@@ -70,7 +77,7 @@ elseif( isset($data["join_accept"])) //Join Callback
 {
 
 }
-
+*/
 
 
 
