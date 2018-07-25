@@ -58,7 +58,7 @@ elseif( isset($data["transmissionStatus"])) //Downlink Payload Status Callback
 else
 {
 
-    $sql="INSERT INTO `orbiwise_others` (data) VALUES ('$data');";
+    $sql="INSERT INTO `orbiwise_others` (data) VALUES ('$crudo');";
     $conn->query($sql);
 }
 
