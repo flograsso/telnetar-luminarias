@@ -38,29 +38,35 @@ if( isset($data["dataFrame"])) //Receive Uplink Payload Callback
     else    
         $decrypted="1";
 
-//$sql="INSERT INTO `orbiwise` (crudo,deveui,payload,port,fcnt,rssi,snr,sf_used,payload_id,decrypted,live,timestamp) VALUES ('$crudo','$deveui','$payload','$port','$fcnt','$rssi','$snr','$sf_used','$payload_id','$decrypted','$live','$timestamp');";
 
-$sql="INSERT INTO `orbiwise` (crudo,deveui,payload,port,fcnt,rssi,snr,sf_used,payload_id,decrypted,live,timestamp) VALUES ('$crudo','$deveui','$dataFrame','$port','$fcnt','$rssi','$snr','$sf_used','$id','$decrypted','$live','$timestamp');";
-
-$conn->query($sql);
+    $sql="INSERT INTO `orbiwise_uplink` (crudo,deveui,payload,port,fcnt,rssi,snr,sf_used,payload_id,decrypted,live,timestamp) VALUES ('$crudo','$deveui','$dataFrame','$port','$fcnt','$rssi','$snr','$sf_used','$id','$decrypted','$live','$timestamp');";
+    $conn->query($sql);
 }
 
-if( isset($data["transmissionStatus"])) //Downlink Payload Status Callback
+elseif( isset($data["transmissionStatus"])) //Downlink Payload Status Callback
+{
+    $deveui=$data["deveui"];
+    $dataDown= bin2hex(base64_decode($data["data"]));
+    $port=$data["port"];
+    $fcnt=$data["fcnt"];
+    $id=$data["id"];
+    $transmissionStatus=$data["transmissionStatus"];
+
+    $sql="INSERT INTO `orbiwise_downlink` (deveui,data,id,fcnt,port,transmissionStatus) VALUES ('$deveui','$dataDown','$id','$fcnt','$port','$transmissionStatus');";
+    $conn->query($sql);
+}
+
+elseif( isset($data["registration_status"])) //Node Info Update Callback
 {
 
 }
 
-if( isset($data["registration_status"])) //Node Info Update Callback
+elseif( isset($data["battery_status"])) //Node Status Update Callback
 {
 
 }
 
-if( isset($data["battery_status"])) //Node Status Update Callback
-{
-
-}
-
-if( isset($data["join_accept"])) //Join Callback
+elseif( isset($data["join_accept"])) //Join Callback
 {
 
 }
