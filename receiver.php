@@ -19,12 +19,25 @@ $db = substr($url["path"], 1);
 
 $conn = new mysqli($server, $username, $password, $db);
 
-$datos=json_encode($data);
+$crudo=json_encode($data);
+
+$deveui=$data["deveui"];
+$dataFrame=$data["dataFrame"]
+$port=$data["port"];
+$fcnt=$data["fcnt"];
+$rssi=$data["rssi"]
+$snr=$data["snr"];
+$sf_used=$data["sf_used"];
+id=$data["id"];
+$decrypted=$data["decrypted"];
+$live=$data["live"];
+$timestamps=$data["timestamp"];
+
 
 echo $data["deveui"];
 
 
-$sql="INSERT INTO `orbiwise` (crudo,deveui,payload,port,fcnt,rssi,snr,sf_used,payload_id,decrypted,live,timestamp) VALUES ('$datos','$data["deveui"]','$data["dataFrame"]','$data["port"]','$data["fcnt"]','$data["rssi"]','$data["snr"]','$data["sf_used"]','$data["id"]','$data["decrypted"]','$data["live"]','$data["timestamp"]');";
+$sql="INSERT INTO `orbiwise` (crudo,deveui,payload,port,fcnt,rssi,snr,sf_used,payload_id,decrypted,live,timestamp) VALUES ('$crudo','$deveui','$payload','$port','$fcnt','$rssi','$snr','$sf_used','$payload_id','$decrypted','$live','$timestamp');";
 
 echo $conn->query($sql);
 
