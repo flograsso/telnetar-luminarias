@@ -20,9 +20,13 @@ $db = substr($url["path"], 1);
 
 $conn = new mysqli($server, $username, $password, $db);
 
-$sql="INSERT INTO `orbiwise` (valores) VALUES (var_dump($data);";
+$datos=var_dump($data);
+
+$sql="INSERT INTO `orbiwise` (valores) VALUES ('$datos');";
 $conn->query($sql);
-var_dump($data);
+
+echo json_encode($data);
 	
 
 ?>
+
