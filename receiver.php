@@ -22,11 +22,24 @@ $conn = new mysqli($server, $username, $password, $db);
 
 $datos=json_encode($data);
 
-$sql="INSERT INTO `orbiwise` (valores) VALUES ('$datos');";
+$sql="INSERT INTO `orbiwise` (crudo,deveui,payload,port,fcnt,rssi,snr,sf_used,payload_id,decrypted,live,timestamp) 
+VALUES (
+'$datos',
+'$data["deveui"]',
+'$data["dataFrame"]',
+'$data["port"]',
+'$data["fcnt"]',
+'$data["rssi"]',
+'$data["snr"]',
+'$data["sf_used"]',
+'$data["id"]',
+'$data["decrypted"]',
+'$data["live"]',
+'$data["timestamp"]');";
+
 $conn->query($sql);
 
-$sql="INSERT INTO `orbiwise` (valores) VALUES ('dato');";
-$conn->query($sql);
+
 
 echo json_encode($data);
 	
