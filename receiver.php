@@ -39,7 +39,7 @@ echo $data["deveui"];
 
 $sql="INSERT INTO `orbiwise` (crudo,deveui,payload,port,fcnt,rssi,snr,sf_used,payload_id,decrypted,live,timestamp) VALUES ('$crudo','$deveui','$payload','$port','$fcnt','$rssi','$snr','$sf_used','$payload_id','$decrypted','$live','$timestamp');";
 
-echo $conn->query($sql);
+$conn->query($sql);
 
 
 
