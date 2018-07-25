@@ -36,9 +36,9 @@ $live=$data["live"];
 $timestamps=$data["timestamp"];
 
 if ($decrypted)
-    $decrypted=true;
+    $decrypted="si";
 else    
-    $decrypted=false;
+    $decrypted="no";
 
 
 
