@@ -25,6 +25,9 @@ $datos=json_encode($data);
 $sql="INSERT INTO `orbiwise` (valores) VALUES ('$datos');";
 $conn->query($sql);
 
+$sql="INSERT INTO `orbiwise` (valores) VALUES ('dato');";
+$conn->query($sql);
+
 echo json_encode($data);
 	
 
