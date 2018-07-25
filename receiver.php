@@ -51,7 +51,7 @@ echo $timestamps;
 
 $sql="INSERT INTO `orbiwise` (crudo,deveui,payload,port,fcnt,rssi,snr,sf_used,payload_id,decrypted,live,timestamp) VALUES ('a','a,','a','a','a','a','a','a','a','a','a','a');";
 
-//$conn->query($sql);
+$conn->query($sql);
 
 
 
