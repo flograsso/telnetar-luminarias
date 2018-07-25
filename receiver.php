@@ -29,6 +29,7 @@ $rssi=$data["rssi"];
 $snr=$data["snr"];
 $sf_used=$data["sf_used"];
 $id=$data["id"];
+
 $decrypted=$data["decrypted"];
 $live=$data["live"];
 $timestamps=$data["timestamp"];
@@ -39,7 +40,7 @@ $timestamps=$data["timestamp"];
 
 //$sql="INSERT INTO `orbiwise` (crudo,deveui,payload,port,fcnt,rssi,snr,sf_used,payload_id,decrypted,live,timestamp) VALUES ('$crudo','$deveui','$payload','$port','$fcnt','$rssi','$snr','$sf_used','$payload_id','$decrypted','$live','$timestamp');";
 
-$sql="INSERT INTO `orbiwise` (crudo,deveui,payload,port,fcnt,rssi,snr,sf_used,payload_id,decrypted,live,timestamp) VALUES ('$crudo','$deveui','$payload','$port','$fcnt','$rssi','$snr','$sf_used','$payload_id','$decrypted','$live','$timestamp');";
+$sql="INSERT INTO `orbiwise` (crudo,deveui,payload,port,fcnt,rssi,snr,sf_used,payload_id,decrypted,live,timestamp) VALUES ('$crudo','$deveui','$dataFrame','$port','$fcnt','$rssi','$snr','$sf_used','$id','$decrypted','$live','$timestamp');";
 
 $conn->query($sql);
 
