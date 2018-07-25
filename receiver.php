@@ -35,10 +35,10 @@ echo $decrypted ."<br>";
 $live=$data["live"];
 $timestamps=$data["timestamp"];
 
-if ($decrypted)
-    $decrypted="si";
+if ($decrypted == "")
+    $decrypted="0";
 else    
-    $decrypted="no";
+    $decrypted="1";
 
 
 
