@@ -23,6 +23,7 @@ $datos=json_encode($data);
 
 echo $data["deveui"];
 
+/*
 $sql="INSERT INTO `orbiwise` (crudo,deveui,payload,port,fcnt,rssi,snr,sf_used,payload_id,decrypted,live,timestamp) 
 VALUES (
 '$datos',
@@ -39,7 +40,7 @@ VALUES (
 '$data["timestamp"]');";
 
 echo $conn->query($sql);
-
+*/
 
 
 echo json_encode($data);
