@@ -22,7 +22,7 @@ $conn = new mysqli($server, $username, $password, $db);
 $crudo=json_encode($data);
 
 $deveui=$data["deveui"];
-$dataFrame=base64_decode($data["dataFrame"]);
+$dataFrame= bin2hex(base64_decode($data["dataFrame"]));
 $port=$data["port"];
 $fcnt=$data["fcnt"];
 $rssi=$data["rssi"];
